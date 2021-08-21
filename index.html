@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+    <title>Progress steps</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2 class="header__h2">Progress steps UI design</h2>
+        <p>Follow the simple 5 steps to complete your registration</p>
+
+        <hr class="header__line" />
+      </div>
+      <div class="side">
+        <!-- Step--1 -->
+        <div class="progress" id="progress"></div>
+        <div class="side__steps active">
+          <!-- Tag--1 -->
+          <div class="side__steps__content">
+            <h4 class="side__h4">Your name</h4>
+            <p>Please privide your name</p>
+          </div>
+          <svg class="side__icon">
+            <use xlink:href="img/sprite.svg#icon-user"></use>
+          </svg>
+        </div>
+
+        <!-- Step--2 -->
+        <div class="side__steps">
+          <!-- Tag--1 -->
+          <div class="side__steps__content">
+            <h4 class="side__h4">Describe</h4>
+            <p>Describe your interest</p>
+          </div>
+          <svg class="side__icon">
+            <use xlink:href="img/sprite.svg#icon-book"></use>
+          </svg>
+        </div>
+
+        <!-- Step--3 -->
+        <div class="side__steps">
+          <!-- Tag--1 -->
+          <div class="side__steps__content">
+            <h4 class="side__h4">Skill</h4>
+            <p>Write the most important</p>
+          </div>
+          <svg class="side__icon">
+            <use xlink:href="img/sprite.svg#icon-pen"></use>
+          </svg>
+        </div>
+
+        <!-- Step--4 -->
+        <div class="side__steps">
+          <!-- Tag--1 -->
+          <div class="side__steps__content">
+            <h4 class="side__h4">Job</h4>
+            <p>Your experience</p>
+          </div>
+          <svg class="side__icon">
+            <use xlink:href="img/sprite.svg#icon-price-tags"></use>
+          </svg>
+        </div>
+
+        <!-- Step--5 -->
+        <div class="side__steps">
+          <!-- Tag--1 -->
+          <div class="side__steps__content">
+            <h4 class="side__h4">Reference</h4>
+            <p>Upload 2 references</p>
+          </div>
+          <svg class="side__icon">
+            <use xlink:href="img/sprite.svg#icon-envelop"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="content">
+        <!-- Header title -->
+        <div class="content__header">
+          <p>Required information</p>
+          <h2 class="content__header__h2">Description Form to complete</h2>
+          <p>Please let us know what type of business describe you</p>
+
+          <hr class="header__line" />
+        </div>
+
+        <!-- description -->
+
+        <div class="content__description">
+          <!-- Option--1 -->
+          <button class="content__description__option">
+            <span>😀</span>
+            <div class="content__description__option--content">
+              <h4 class="content__description__option--h4">Personal</h4>
+              <p>You will use this account for personal use</p>
+            </div>
+          </button>
+
+          <!-- Option--2 -->
+          <button class="content__description__option">
+            <span>💰</span>
+            <div class="content__description__option--content">
+              <h4 class="content__description__option--h4">Business</h4>
+              <p>Please define your purpose and tell us your experience.</p>
+            </div>
+          </button>
+
+          <!-- Buttons options next and prev -->
+          <div class="content__btn">
+            <button class="content__btn__btns" id="prev" disabled>Prev</button>
+            <button class="content__btn__btns" id="next">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
