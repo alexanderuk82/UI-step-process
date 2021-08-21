@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+// Coloours
+
+$main-background: hsl(236, 100%, 14%);
+$active: hsl(156, 68%, 48%);
+$unactive: hsl(241, 32%, 35%);
+$body-color: hsl(234, 8%, 47%);
+$main-font: 'sofia-pro', sans-serif;
+$line-color: hsla(0, 0%, 100%, 0.212);
+$icon-color: hsl(0, 4%, 65%);
+
+body {
+  background-color: $main-background;
+  font-family: $main-font;
+  color: $body-color;
+  font-size: 1.5rem;
+}
+
+.container {
+  margin: 8rem 13rem;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  height: 20vh;
+  align-content: start;
+}
+
+.header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-rows: 1fr 1.5fr;
+
+  &__h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    padding: 0.8rem 0;
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+  }
+}
+
+.side {
+  display: grid;
+  row-gap: 11rem;
+  padding: 4rem 0;
+  border-right: 1px solid $line-color;
+  position: relative;
+  padding-bottom: 7rem;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $line-color;
+    position: absolute;
+    height: 80%;
+    width: 0.2rem;
+    top: 5rem;
+    right: 6.5rem;
+    z-index: -1;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    fill: $icon-color;
+    padding: 1rem;
+    border-radius: 5rem;
+    background-color: $unactive;
+  }
+  &__steps {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    padding-right: 4.2rem;
+    align-items: center;
+    position: relative;
+
+    &.active {
+      .side__h4 {
+        color: #fff;
+      }
+
+      .side__icon {
+        background-color: $active;
+        fill: #fff;
+      }
+    }
+
+    &__content {
+      text-align: right;
+      margin-right: 4rem;
+    }
+  }
+
+  &__h4 {
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.315);
+    margin-bottom: 0.7rem;
+    transition: all 0.3s;
+  }
+  // &::after {
+  //   content: '';
+  //   display: block;
+  //   background-color: $body-color;
+  //   width: 0.2%;
+  //   min-height: 100vh;
+  // }
+}
+.progress {
+  background-color: $active;
+  position: absolute;
+  height: 1%;
+  width: 0.3rem;
+  top: 5rem;
+  right: 6.5rem;
+  z-index: -1;
+  transition: 0.5s ease-in;
+}
+
+.content {
+  padding: 6rem 0rem;
+  padding-left: 6rem;
+
+  &__header {
+    & > p:last-of-type {
+      padding-bottom: 3rem;
+    }
+
+    &__h2 {
+      font-size: 3.5rem;
+      color: #fff;
+      padding: 0.8rem 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__description {
+    margin-top: 6rem;
+    display: grid;
+    row-gap: 2rem;
+    &__option {
+      display: flex;
+      align-items: center;
+      border: 1px solid $line-color;
+      padding: 3rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      background: transparent;
+      width: 100%;
+
+      &:hover {
+        transition: 0.3s ease;
+        border: 1px solid $active;
+        border: 1px solid $active;
+        box-shadow: -1px -3px 2rem -2rem rgba($active, 0.3);
+      }
+
+      &:focus,
+      &:active {
+        border: 1px solid $active;
+        box-shadow: -1px -3px 20px -2px rgba($active, 0.3);
+      }
+
+      span {
+        padding: 2rem;
+        width: 3rem;
+        height: 3rem;
+        background-color: hsla(241, 32%, 35%, 0.6);
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &--h4 {
+        font-size: 2.2rem;
+        color: rgb(255, 255, 255);
+        margin-bottom: 1rem;
+      }
+
+      &--content {
+        margin-left: 2rem;
+        text-align: left;
+        p {
+          color: $unactive;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 12rem;
+    display: flex;
+    justify-content: flex-end;
+
+    & > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+
+    &__btns {
+      padding: 1.4rem 4.5rem;
+      background-color: $active;
+      border: 0;
+      border-radius: 50rem;
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &:disabled {
+        background-color: $unactive;
+        cursor: not-allowed;
+      }
+      cursor: pointer;
+    }
+  }
+}
